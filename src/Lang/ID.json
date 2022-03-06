@@ -1,0 +1,18 @@
+{
+    "version": "version 0.0.1",
+    "type": "ID",
+    "auth": {
+        "login": "Masuk",
+        "splash": "Splash",
+        "boarding": "Boarding",
+        "register": "Daftar"
+    },
+    "menu": {
+        "home": "Beranda",
+        "profile": "Akun"
+    },
+    "text": {
+        "login": "Masuk",
+        "register": "Daftar"
+    }
+}

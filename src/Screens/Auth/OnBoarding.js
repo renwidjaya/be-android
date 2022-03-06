@@ -4,6 +4,7 @@ import {boarding} from '../../Ui/Auth';
 import {Colors, General} from '../../Themes';
 import {BoardingCard} from '../../Components/Card';
 import {ButtonDefault} from '../../Components/Button';
+import {useLang} from '../../Lang';
 
 const pageStyle = isActive =>
   isActive
@@ -25,6 +26,7 @@ const Pagination = ({index}) => {
 };
 
 const OnBoarding = ({navigation}) => {
+  const {lang} = useLang();
   const [WelcomeIndex, setWelcomeIndex] = useState(0);
 
   const onViewRef = useRef(({changed}) => {
@@ -54,14 +56,14 @@ const OnBoarding = ({navigation}) => {
       <Pagination index={WelcomeIndex} />
       <View style={boarding.BtnContent}>
         <ButtonDefault
-          typeName={'Daftar'}
-          handleSubmit={() => navigation.navigate('register')}
+          typeName={lang.text.register}
+          handleSubmit={() => navigation.navigate(lang.auth.register)}
         />
       </View>
       <TouchableOpacity
         style={boarding.BtnLogin}
-        onPress={() => navigation.navigate('login')}>
-        <Text style={boarding.BtnLogin}>Masuk</Text>
+        onPress={() => navigation.navigate(lang.auth.login)}>
+        <Text style={boarding.BtnLogin}>{lang.text.login}</Text>
       </TouchableOpacity>
     </View>
   );
