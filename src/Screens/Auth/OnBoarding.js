@@ -58,6 +58,7 @@ const OnBoarding = ({navigation}) => {
         <ButtonDefault
           typeName={lang.text.register}
           handleSubmit={() => navigation.navigate(lang.auth.register)}
+          typeWidth={90}
         />
       </View>
       <TouchableOpacity

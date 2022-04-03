@@ -1,3 +1,4 @@
 import BoardingCard from './BoardingCard';
+import KeyboardCard from './KeyboardCard';
 
-export {BoardingCard};
+export {BoardingCard, KeyboardCard};

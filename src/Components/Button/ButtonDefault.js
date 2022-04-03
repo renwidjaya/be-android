@@ -3,8 +3,8 @@ import {TouchableOpacity, Text} from 'react-native';
 import {Colors} from '../../Themes';
 import {primary} from '../../Ui/Button';
 
-const ButtomDefault = ({handleSubmit, typeName, typeColor}) => {
-  const styles = primary();
+const ButtomDefault = ({handleSubmit, typeName, typeColor, typeWidth}) => {
+  const styles = primary(typeWidth);
   return (
     <TouchableOpacity
       style={[

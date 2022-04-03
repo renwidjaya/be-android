@@ -21,7 +21,7 @@ const Splash = ({navigation}) => {
         barStyle="light-content"
         backgroundColor={Colors.DEFAULT_PRIMARY}
       />
-      <Image source={Images.LOGO} style={splash.Logo} />
+      <Image source={Images.LOGO} style={splash.Logo} resizeMode="contain" />
     </View>
   );
 };
