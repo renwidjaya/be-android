@@ -5,14 +5,26 @@
         "login": "Masuk",
         "splash": "Splash",
         "boarding": "Boarding",
-        "register": "Daftar"
+        "register": "Daftar",
+        "forgot_password": "Lupa kata sandi?"
     },
     "menu": {
         "home": "Beranda",
         "profile": "Akun"
     },
     "text": {
+        "help": "Bantuan",
         "login": "Masuk",
-        "register": "Daftar"
+        "register": "Daftar",
+        "login_remember_account": "Ingat akun saya",
+        "login_forgot_password": "Lupa kata sandi?",
+        "login_account_not_yet": "Belum punya akun?",
+        "login_register_here": "Daftar di sini",
+        "login_reset_password": "Reset Kata Sandi",
+        "login_text_description": "Reset password kamu dengan memasukkan email yang terdaftar di akun Cek Toko Obat"
+    },
+    "field": {
+        "email": "Email",
+        "password": "Password"
     }
 }

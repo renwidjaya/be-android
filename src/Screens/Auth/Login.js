@@ -6,6 +6,7 @@ import {
   Image,
   TextInput,
   TouchableOpacity,
+  ToastAndroid,
 } from 'react-native';
 import HeaderCard from '../../Components/Card/HeaderCard';
 import {useThemes} from '../../Themes/ThemeProvider';
@@ -70,6 +71,10 @@ const Login = ({navigation}) => {
   console.log(data.isErrorText);
   console.log('====================================');
 
+  const handleHelpPress = () => {
+    ToastAndroid.show('Sedang dalam implement!', ToastAndroid.SHORT);
+  };
+
   return (
     <View style={login.Container}>
       <StatusBar
@@ -78,18 +83,18 @@ const Login = ({navigation}) => {
         translucent
       />
       <HeaderCard
-        typeName={'bantuan'}
+        typeName={lang.text.help}
         handleTypeBack={() => navigation.navigate(lang.auth.boarding)}
-        handleTypeHelp={''}
+        handleTypeHelp={() => handleHelpPress()}
       />
       <View style={login.BoxLogo}>
         <Image source={Images.LOGO} style={login.Logo} resizeMode="stretch" />
       </View>
       <View style={login.boxContent}>
-        <Text style={login.textTitle}>Masuk</Text>
+        <Text style={login.textTitle}>{lang.text.login}</Text>
 
         <View style={login.boxField}>
-          <Text style={login.fieldTitle}>Email</Text>
+          <Text style={login.fieldTitle}>{lang.field.email}</Text>
           <TextInput
             style={login.fieldInput}
             onChangeText={val => onChangEmail(val)}
@@ -102,7 +107,7 @@ const Login = ({navigation}) => {
         </View>
 
         <View style={login.boxField}>
-          <Text style={login.fieldTitle}>Password</Text>
+          <Text style={login.fieldTitle}>{lang.field.password}</Text>
           <TextInput
             style={login.fieldInput}
             onChangeText={val => onChangePassword(val)}
@@ -135,19 +140,33 @@ const Login = ({navigation}) => {
               <Feather name="check" color="white" size={14} />
             </TouchableOpacity>
 
-            <Text style={login.fieldTextRemember}>Ingat akun saya</Text>
+            <Text style={login.fieldTextRemember}>
+              {lang.text.login_remember_account}
+            </Text>
           </View>
-          <Text style={login.fieldTextForgot}>Lupa kata sandi?</Text>
+          <TouchableOpacity
+            onPress={() => navigation.navigate(lang.auth.forgot_password)}>
+            <Text style={login.fieldTextForgot}>
+              {lang.text.login_forgot_password}
+            </Text>
+          </TouchableOpacity>
         </View>
       </View>
       <View style={login.fieldBoxButton}>
         <ButtomDefault
-          typeName={'Masuk'}
+          typeName={lang.text.login}
           handleSubmit={() => handleLoginPress()}
         />
         <View style={login.fieldBoxCreate}>
-          <Text style={login.fieldTextCreate1}>Belum punya akun?</Text>
-          <Text style={login.fieldTextCreate2}>Daftar di sini</Text>
+          <Text style={login.fieldTextCreate1}>
+            {lang.text.login_account_not_yet}
+          </Text>
+          <TouchableOpacity
+            onPress={() => navigation.navigate(lang.auth.register)}>
+            <Text style={login.fieldTextCreate2}>
+              {lang.text.login_register_here}
+            </Text>
+          </TouchableOpacity>
         </View>
       </View>
     </View>

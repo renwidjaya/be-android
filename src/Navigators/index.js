@@ -1,7 +1,13 @@
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import {Splash, OnBoarding, Login, Register} from '../Screens/Auth';
+import {
+  Splash,
+  OnBoarding,
+  Login,
+  Register,
+  ForgotPassword,
+} from '../Screens/Auth';
 import {useLang} from '../Lang';
 import Home from '../Screens/Home';
 
@@ -19,6 +25,10 @@ const Navigators = () => {
         <Stack.Screen name={lang.auth.boarding} component={OnBoarding} />
         <Stack.Screen name={lang.auth.login} component={Login} />
         <Stack.Screen name={lang.auth.register} component={Register} />
+        <Stack.Screen
+          name={lang.auth.forgot_password}
+          component={ForgotPassword}
+        />
         <Stack.Screen name={lang.menu.home} component={Home} />
       </Stack.Navigator>
     </NavigationContainer>
